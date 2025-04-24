@@ -3,6 +3,7 @@ import React from "react";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "../src/infrastructure/theme";
 import { RestaurantsScreen } from "../src/features/restaurants/screens/restaurants.screen.js";
+import { useNavigation } from "expo-router"; // Importar useNavigation
 
 import {
   useFonts as useOswald,
@@ -11,6 +12,15 @@ import {
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 
 export default function Index() {
+  const navigation = useNavigation();
+
+  // Ocultar el encabezado automáticamente generado
+  React.useLayoutEffect(() => {
+    navigation.setOptions({
+      headerShown: false, // Oculta el encabezado
+    });
+  }, [navigation]);
+
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
   });
