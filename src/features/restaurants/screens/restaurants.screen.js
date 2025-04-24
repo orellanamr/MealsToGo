@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, StatusBar, Text, View, StyleSheet } from "react-native";
+import { SafeAreaView, StatusBar, View } from "react-native";
 import { Searchbar } from "react-native-paper";
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component.js";
 import styled from "styled-components/native";
